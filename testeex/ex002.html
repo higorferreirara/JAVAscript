@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+    <style>
+        body {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: brown;
+        }
+        div#cx {
+            width: 400px;
+            height: 300px;
+            background-color: azure;
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="cx">
+        <h1>Será que você é brasileiro?</h1>
+        <h2>Onde você nasceu?</h2>
+        <input type="text" name="pais" id="pais">
+        <input type="button" value="Verificar" onclick="nacionalidade()">
+        <div id="res">
+        </div>
+    </div>
+
+    <script>
+        function nacionalidade(){
+            var pais = document.querySelector('input#pais')
+            var tela = document.querySelector('div#res')
+            var res = (pais.value)
+            tela.innerHTML = `<p>Vivendo em ${res}.</p> `
+            if (res == 'Brasil'){
+                tela.innerHTML += '<p>Você é brasileiro!</p> '
+            } else {
+                tela.innerHTML += '<p>Você é estrangeiro!</p> '
+            }
+        
+        }
+    </script>
+</body>
+</html>
