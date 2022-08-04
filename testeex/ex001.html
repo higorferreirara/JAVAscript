@@ -18,9 +18,16 @@
             height: 300px;
             background-color: antiquewhite;
             padding-top: 10px;
+            padding-bottom: 10px;
             color: black;
             margin: auto;
             font-size: 1.2em;
+        }
+        input#caixa {
+            width: 80px;
+            height: 30px;
+            font-size: 1.2em;
+            text-align: center;
         }
 
     </style>
@@ -29,13 +36,21 @@
     <div id="cx">
         <h1>Exercicios de fixação</h1>
         <p>Me diga um número:</p>
-        <input type="number" name="caixa1" id="caixa">
+        <input type="number" name="caixa" id="caixa">
+        <input type="button" value="Verificar" onclick="verificar()">
         <div id="as">
             Antecessor e Sucessor
         </div>
     </div>
     <script>
-       
+       function verificar(){
+        var caixa = document.getElementById('caixa')
+        var res = document.getElementById('as')
+        var resul = Number(caixa.value)
+        res.innerHTML = `<p>O antecessor de ${resul} é ${resul - 1}. </p>`
+        res.innerHTML += `<p>O sucessor de ${resul} é ${resul + 1}. </p>`
+       }
+
     </script>
 </body>
 </html>
