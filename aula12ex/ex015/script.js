@@ -9,10 +9,12 @@ function verificar() {
         var fsex = document.getElementsByName('radsex')
         var idade = ano - Number(fano.value)
         var genero = ''
+        var clas = ''
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
         if (fsex[0].checked){
             genero = 'Homem'
+            clas = 'um'
             if (idade >= 0 && idade < 13){
                 img.setAttribute('src', 'imagem/bebehomem.png')
             } else if (idade < 25){
@@ -24,6 +26,7 @@ function verificar() {
             }
         } else if (fsex[1].checked){
             genero = 'Mulher'
+            clas = 'uma'
             if (idade >= 0 && idade < 13){
                 img.setAttribute('src', 'imagem/bebemulher.png')
             } else if (idade < 25){
@@ -35,7 +38,7 @@ function verificar() {
             }
         }
         res.style.textAlign = 'center'
-        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+        res.innerHTML = `Detectamos ${clas} ${genero} com ${idade} anos.`
         res.appendChild(img)
     } 
 }
